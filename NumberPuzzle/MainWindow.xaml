@@ -26,7 +26,7 @@
             <StackPanel Name="stackPanel1" DockPanel.Dock="Left" Width="200" >
                 <Grid  Name="grid1" Width="200" >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="270" />
+                        <RowDefinition Height="470" />
                         <RowDefinition Height="155"/>
                         <RowDefinition Height="195" />
                     </Grid.RowDefinitions>
@@ -34,8 +34,8 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Canvas IsEnabled="True" Grid.Column="0" Grid.Row="0" >
-                        <Rectangle Width="200" Height="260" RadiusX="10" RadiusY="10" Fill="Gainsboro" Stroke="Silver" Opacity="0.5"/>
-                        <StackPanel Width="200" Height="260"  VerticalAlignment="Top">
+                        <Rectangle Width="200" Height="460" RadiusX="10" RadiusY="10" Fill="Gray" Stroke="Silver" Opacity="0.5"/>
+                        <StackPanel Width="200" Height="460"  VerticalAlignment="Top">
                             <Label Height="35" Width="94" FontSize="12" FontWeight="Bold">Font Settings</Label>
                             <Grid Name="grid2" Width="200" >
                                 <Grid.RowDefinitions>
@@ -88,7 +88,7 @@
                             </Grid>
                             <Slider Height="30" Name="positionSlider" Width="175" Minimum="-200" Maximum="195" SmallChange="1" LargeChange="10" Value="50" IsSnapToTickEnabled="True" />
 
-                            <Grid Name="grid5" Width="200" >
+                            <Grid Name="grid9" Width="200" >
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
@@ -96,10 +96,11 @@
                                     <ColumnDefinition Width="80" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0">Quality</Label>
-                                <Label Name="qualityLabel" Grid.Column="1" ></Label>
+                                <Label Grid.Column="0">Brush Color</Label>
+                                <StackPanel Name="colorPanel" Grid.Column="1" Background="Red" Width="40" Height="40" HorizontalAlignment="Left" Margin="5,0,0,0"></StackPanel>
+                                <Button Grid.Column="1" Width="25" Height="25" Name="colorButton" Margin="5,0,0,0" >...</Button>
                             </Grid>
-                            <Slider Height="30" Name="qualitySlider" Width="175" Minimum="1" Maximum="999" SmallChange="1" LargeChange="10" Value="250" IsSnapToTickEnabled="True" />
+                            
                         </StackPanel>
                     </Canvas>
                     <Canvas Grid.Row="1">
@@ -148,36 +149,13 @@
                                     <ColumnDefinition Width="80" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0">Line Width</Label>
-                                <Label Name="widthLabel" Grid.Column="1" Content="{Binding Value, ElementName=widthSlider}"></Label>
+                                <Label Grid.Column="0">Blurness</Label>
+                                <Label Name="blurLabel" Grid.Column="1" Content="{Binding Value, ElementName=blurSlider}"></Label>
                             </Grid>
-                            <Slider Height="30" Name="widthSlider" Width="175" Minimum="1" Maximum="20" SmallChange="1" LargeChange="10" IsSnapToTickEnabled="True" />
+                            <Slider Height="30" Name="blurSlider" Width="175" Minimum="1" Maximum="20" SmallChange="1" LargeChange="10" IsSnapToTickEnabled="True" />
 
-                            <Grid Name="grid8" Width="200" >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0">Softness</Label>
-                                <Label Name="softnessLabel" Grid.Column="1" Content="{Binding Value, ElementName=softnessSlider}"></Label>
-                            </Grid>
-                            <Slider Height="30" Name="softnessSlider" Width="175" Minimum="0" Maximum="20" SmallChange="1" LargeChange="10" IsSnapToTickEnabled="True" />
-
-                            <Grid Name="grid9" Width="200" >
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80" />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0">Brush Color</Label>
-                                <StackPanel Name="colorPanel" Grid.Column="1" Background="Red" Width="40" Height="40" HorizontalAlignment="Left" Margin="5,0,0,0"></StackPanel>
-                                <Button Grid.Column="1" Width="25" Height="25" Name="colorButton" Margin="5,0,0,0" >...</Button>
-                            </Grid>
+                            
+                            
                         </StackPanel>
                     </Canvas>
                 </Grid>
